@@ -1,0 +1,193 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="onlinenews.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%: Page.Title %> - My ASP.NET Application</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href="themes/style.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form runat="server">
+        <asp:ScriptManager runat="server">
+        </asp:ScriptManager>
+
+        <div id="wrapper">
+            <!-- BEGIN header -->
+            <div id="header">
+                <ul class="pages">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About us</a></li>
+                    <li><a href="page.html">Demo Page</a></li>
+                    <li><a href="contact.html">Contact Page</a></li>
+                </ul>
+                <div class="formcss" action="#" style="float: right;">
+                    <p>Search: </p>
+                    <input type="text" name="s" id="s" value="" />
+                    <button type="submit">Go</button>
+                </div>
+                <div class="break"></div>
+                <h1><a href="#">InnodeMag</a></h1>
+                <div class="ad">
+                    <a href="#">
+                        <img src="themes/images/ad468x60.gif" alt="" /></a>
+                </div>
+                <ul class="categories">
+                    <li><a href="#">Advertising</a></li>
+                    <li><a href="#">Fashion</a></li>
+                    <li><a href="#">Food</a></li>
+                    <li><a href="#">Lifestyle</a></li>
+                    <li><a href="#">Photos</a></li>
+                    <li><a href="#">Videos</a></li>
+                </ul>
+            </div>
+            <!-- END header -->
+            <!-- BEGIN content -->
+            <div id="content">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+
+
+                </asp:ContentPlaceHolder>
+            </div>
+            <!-- END content -->
+            <!-- BEGIN sidebar -->
+            <div id="sidebar">
+                <!-- begin sponsors -->
+                <div class="box">
+                    <h2>Sponsors</h2>
+                    <div class="sponsors">
+                        <a href="#">
+                            <img src="themes/images/ad125x125.jpg" alt="" /></a>
+                        <a href="#">
+                            <img src="themes/images/ad125x125.jpg" alt="" /></a>
+                        <a href="#">
+                            <img src="themes/images/ad125x125.jpg" alt="" /></a>
+                        <a href="#">
+                            <img src="themes/images/ad125x125.jpg" alt="" /></a>
+                    </div>
+                </div>
+                <!-- end sponsors -->
+                <!-- begin popular posts -->
+                <div class="box">
+                    <h2>Popular Posts</h2>
+                    <ul>
+                        <li><a href="#">Pellentesque Aapien Orci Blandit</a></li>
+                        <li><a href="#">Nam Et Nisi Ut Nunc Sequitor</a></li>
+                        <li><a href="#">Quisque Egestas Posuere Tellus</a></li>
+                        <li><a href="#">Quisque Sit Amet Diam</a></li>
+                        <li><a href="#">Interdum Arcu Sit Amet Erat</a></li>
+                        <li><a href="#">Aenean Lectus Massa Sequitor</a></li>
+                    </ul>
+                </div>
+                <!-- end popular posts -->
+                <!-- begin featured video -->
+                <div class="box">
+                    <h2>Featured Video</h2>
+                    <div class="video">
+                        <img src="themes/images/_video.jpg" alt="" />
+                    </div>
+                </div>
+                <!-- end featured video -->
+                <!-- begin flickr photos -->
+                <div class="box">
+                    <h2>Flickr Photos</h2>
+                    <div class="flickr">
+                        <a href="#">
+                            <img src="themes/images/_flickr1.jpg" alt="" /></a>
+                        <a href="#">
+                            <img src="themes/images/_flickr2.jpg" alt="" /></a>
+                        <a href="#">
+                            <img src="themes/images/_flickr3.jpg" alt="" /></a>
+                        <a href="#">
+                            <img src="themes/images/_flickr4.jpg" alt="" /></a>
+                        <a href="#">
+                            <img src="themes/images/_flickr5.jpg" alt="" /></a>
+                        <a href="#">
+                            <img src="themes/images/_flickr6.jpg" alt="" /></a>
+                    </div>
+                </div>
+                <!-- end flickr photos -->
+                <!-- BEGIN left -->
+                <div class="l sidebar">
+                    <!-- begin pages -->
+                    <div class="box">
+                        <h2>Pages</h2>
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Archives</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">Links</a></li>
+                        </ul>
+                    </div>
+                    <!-- end pages -->
+                    <!-- begin categories -->
+                    <div class="box">
+                        <h2>Categories</h2>
+                        <ul>
+                            <li><a href="#">Advertising</a></li>
+                            <li><a href="#">Fashion</a></li>
+                            <li><a href="#">Gadgets</a></li>
+                            <li><a href="#">Lifestyle</a></li>
+                            <li><a href="#">Networking</a></li>
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Sports</a></li>
+                        </ul>
+                    </div>
+                    <!-- end categories -->
+                </div>
+                <!-- END left -->
+                <!-- BEGIN right -->
+                <div class="r sidebar">
+                    <!-- begin blogroll -->
+                    <div class="box">
+                        <h2>Blogroll</h2>
+                        <ul>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">Suggest Ideas</a></li>
+                            <li><a href="#">Support Forum</a></li>
+                        </ul>
+                    </div>
+                    <!-- end blogroll -->
+                    <!-- begin meta -->
+                    <div class="box">
+                        <h2>Meta</h2>
+                        <ul>
+                            <li><a href="#">Site Admin</a></li>
+                            <li><a href="#">Log out</a></li>
+                            <li><a href="#">Valid XHTML</a></li>
+                        </ul>
+                    </div>
+                    <!-- end meta -->
+                    <!-- begin archives -->
+                    <div class="box">
+                        <h2>Archives</h2>
+                        <ul>
+                            <li><a href="#">January 2009</a></li>
+                            <li><a href="#">November 2008</a></li>
+                            <li><a href="#">October 2008</a></li>
+                        </ul>
+                    </div>
+                    <!-- end archives -->
+                </div>
+                <!-- END right -->
+            </div>
+            <!-- END sidebar -->
+            <!-- BEGIN footer -->
+            <div id="footer">
+                <footer>
+                    <p>Copyright &copy; 2021 - <a href="#">Online news</a> &middot; All Rights Reserved | Powered by: <a href="#">Phoenix hub</a> | Get More <a href="#">Free CSS Templates</a></p>
+                </footer>
+            </div>
+            <!-- END footer -->
+        </div>
+        <!-- END wrapper -->
+    </form>
+</body>
+</html>
