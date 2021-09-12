@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> - Online News Application</title>
 
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link href="themes/style.css" rel="stylesheet" />
@@ -34,7 +34,8 @@
                     <button type="submit">Go</button>
                 </div>
                 <div class="break"></div>
-                <h1><a href="#">InnodeMag</a></h1>
+                <h1><a href="#">Online News</a>
+                </h1>
                 <div class="ad">
                     <a href="#">
                         <img src="themes/images/ad468x60.gif" alt="" /></a>

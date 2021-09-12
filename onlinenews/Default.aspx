@@ -14,53 +14,37 @@
     <!-- add to the <body> of your page -->
     <div class="featured">
         <h2 class="title">Featured News</h2>
-        <div class="buffer">
+        <div class="buffer"> 
+            <div id="wowslider-container1">
 
-            <%--<div id="wowslider-container1">
                 <div class="ws_images">
                     <ul>
-                        <li>
-                            <img src="themes/news%20slider/data1/images/img1.jpg" alt="img1" title="img1" id="wows1_0" /></li>
-                        <li><a href="http://wowslider.net">
-                            <img src="themes/news%20slider/data1/images/img2.jpg" alt="slider html" title="img2" id="wows1_1" /></a></li>
-                        <li>
-                            <img src="themes/news%20slider/data1/images/img3.jpg" alt="img3" title="img3" id="wows1_2" /></li>
+                        <asp:Repeater ID="RepeatInformation" runat="server">
+                            <HeaderTemplate>
+                            </HeaderTemplate>
+                            <ItemTemplate>
+                                <li><a href="http://wowslider.net">
+                                    <asp:Image runat="server" ImageUrl='<%# Eval("NewsBanner") %>' alt="slider html" title='<%# Eval("NewsTitle") %>' ID="wows1_1" /></a></li>
+                            </ItemTemplate>
+                            <FooterTemplate>
+                            </FooterTemplate>
+                        </asp:Repeater>
                     </ul>
                 </div>
+
                 <div class="ws_bullets">
                     <div>
-                        <a href="#" title="img1"><span>
-                            1</span></a>
-                        <a href="#" title="img2"><span>
-                            2</span></a>
-                        <a href="#" title="img3"><span>
-                           3</span></a>
+                        <asp:Repeater ID="RepeaterBullets" runat="server">
+                            <HeaderTemplate>
+                            </HeaderTemplate>
+                            <ItemTemplate>
+                                <asp:HyperLink runat="server" ID="lnkBullets" href="#" title='<%# Eval("NewsTitle") %>'><span>1</span></asp:HyperLink>
+                            </ItemTemplate>
+                            <FooterTemplate>
+                            </FooterTemplate>
+                        </asp:Repeater>
                     </div>
-                </div>--%>
-
-            <div id="wowslider-container1">
-                <asp:Repeater ID="RepeatInformation" runat="server">
-                    <HeaderTemplate>
-                    </HeaderTemplate>
-                    <ItemTemplate>
-                        <div class="ws_images">
-                            <ul>
-
-                                <li><a href="http://wowslider.net">
-                                    <asp:Image runat="server" ImageUrl='<%# Eval("") %>' alt="slider html" title='<%# Eval("") %>' id="wows1_1" /></a></li>
-
-                            </ul>
-                        </div>
-                    </ItemTemplate>
-                    <FooterTemplate>
-                        <div class="ws_bullets">
-                            <div>
-                                <asp:HyperLink runat="server" ID="lnkBullets" href="#" title='<%# Eval("") %>'><span>1</span></asp:HyperLink>
-
-                            </div>
-                        </div>
-                    </FooterTemplate>
-                </asp:Repeater>
+                </div>
                 <div class="ws_script" style="position: absolute; left: -99%"></div>
                 <div class="ws_shadow"></div>
             </div>
