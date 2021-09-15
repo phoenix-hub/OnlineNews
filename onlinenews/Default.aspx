@@ -23,7 +23,7 @@
                             <HeaderTemplate>
                             </HeaderTemplate>
                             <ItemTemplate>
-                                <li><a href="http://wowslider.net">
+                                <li><a href="<%# Eval("NewsId") %>">
                                     <asp:Image runat="server" ImageUrl='<%# Eval("NewsBanner") %>' alt="slider html" title='<%# Eval("NewsTitle") %>' ID="wows1_1" /></a></li>
                             </ItemTemplate>
                             <FooterTemplate>

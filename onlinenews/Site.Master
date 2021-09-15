@@ -27,6 +27,8 @@
                     <li><a href="about.html">About us</a></li>
                     <li><a href="page.html">Demo Page</a></li>
                     <li><a href="contact.html">Contact Page</a></li>
+                    <li><a href="login">Login</a></li>
+                    <li><a href="register">New User</a></li>
                 </ul>
                 <div class="formcss" action="#" style="float: right;">
                     <p>Search: </p>
