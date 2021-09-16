@@ -188,6 +188,9 @@
     <Content Include="Admin\partials\_navbar.html" />
     <Content Include="Admin\partials\_sidebar.html" />
     <Content Include="Admin\Index.aspx" />
+    <Content Include="Admin\logout.aspx" />
+    <Content Include="Admin\Users.aspx" />
+    <Content Include="Admin\UpdateProfile.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Default.aspx" />
@@ -363,6 +366,27 @@
     </Compile>
     <Compile Include="Admin\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\UpdateProfile.aspx.cs">
+      <DependentUpon>UpdateProfile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\UpdateProfile.aspx.designer.cs">
+      <DependentUpon>UpdateProfile.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />

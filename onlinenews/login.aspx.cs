@@ -39,6 +39,7 @@ namespace onlinenews
             }
             else
             {
+                Session["UserEmail"] = txtEmail.Text.Trim();
                 Response.Redirect("Admin/Index.aspx");
             }
 

@@ -11,7 +11,7 @@ namespace onlinenews.Admin
 {
 
 
-    public partial class Index
+    public partial class logout
     {
     }
 }
