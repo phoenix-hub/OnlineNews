@@ -21,7 +21,7 @@ namespace onlinenews
         {
             con = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             cmd.Connection = con;
-            cmd.CommandText = "select * from tbl_NewsSlider where IsActive=1 order by newsid desc";
+            cmd.CommandText = "select * from tbl_NewsSlider where IsActive='Active' order by newsid desc";
             con.Open();
 
             da = new SqlDataAdapter(cmd);

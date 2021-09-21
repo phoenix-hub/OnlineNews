@@ -96,6 +96,12 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="ManageSlider.aspx">
+                                <span class="menu-title">Manage Slider</span>
+                                <i class="mdi mdi-airplay menu-icon"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="#">
                                 <span class="menu-title">comming soon</span>
                                 <i class="mdi mdi-contacts menu-icon"></i>

@@ -128,7 +128,7 @@
                             <a href="Index.aspx" class="btn btn-gradient-light btn-fw">Cancel</a>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
-    </div>
 </asp:Content>

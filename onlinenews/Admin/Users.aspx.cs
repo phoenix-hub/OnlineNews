@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace onlinenews.Admin
 {
@@ -38,6 +34,10 @@ namespace onlinenews.Admin
 
             RepeaterUsers.DataSource = ds.Tables[0];
             RepeaterUsers.DataBind();
+        }
+        protected void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

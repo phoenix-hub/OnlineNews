@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace onlinenews.Admin
 {
@@ -20,7 +16,7 @@ namespace onlinenews.Admin
         {
             if (!Page.IsPostBack)
             {
-                Session["UserEmail"] = "ajaynath.be@gmail.com";
+                //Session["UserEmail"] = "ajaynath.be@gmail.com";
                 bindLoggedInUser();
             }
         }
@@ -74,7 +70,7 @@ namespace onlinenews.Admin
                         cmd.Parameters.AddWithValue("@City", txtCity.Text.Trim());
                         cmd.Parameters.AddWithValue("@State", txtState.Text.Trim());
                         cmd.Parameters.AddWithValue("@Country", txtCountry.Text.Trim());
-                        cmd.Parameters.AddWithValue("@Email", txtEmail.Text.Trim());
+                        cmd.Parameters.AddWithValue("@Email", Convert.ToString(Session["UserEmail"]));
                         cmd.Connection = con;
                         con.Open();
                         effectedRows = cmd.ExecuteNonQuery();

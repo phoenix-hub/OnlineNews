@@ -6,10 +6,10 @@
     <div class="col-lg-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Striped Table</h4>
-                <p class="card-description">
-                    Add class <code>.table-striped</code>
-                </p>
+                <h4 class="card-title">Manage Users</h4>
+                <br />
+                <br />
+
 
                 <table class="table table-striped">
                     <asp:Repeater ID="RepeaterUsers" runat="server">
@@ -23,6 +23,7 @@
                                 <th>MobileNo </th>
                                 <th>Email </th>
                                 <th>ActiveStatus </th>
+                                <th>Manage</th>
                             </tr>
                         </HeaderTemplate>
 
@@ -45,6 +46,10 @@
                                 </td>
                                 <td>
                                     <asp:Label ID="lblActiveStatus" runat="server" Text='<%# Eval("ActiveStatus") %>'></asp:Label>
+                                </td>
+                                <td>
+                                    <asp:Button ID="btnDeleteUser" CssClass="btn btn-gradient-danger btn-sm" OnClick="btnDeleteUser_Click" runat="server" Text="Delete" />
+                                    <asp:HyperLink CssClass="btn btn-gradient-success btn-sm" ID="lnkEdit" runat="server" NavigateUrl="#">Edit</asp:HyperLink>
                                 </td>
                             </tr>
                         </ItemTemplate>
