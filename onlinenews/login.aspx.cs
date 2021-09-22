@@ -26,21 +26,22 @@ namespace onlinenews
 
             con = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             cmd.Connection = con;
-            cmd.CommandText = @"select Email from  [dbo].[Users] where   Email= '" + txtEmail.Text.Trim() + "' and password= '" + txtpassword.Text.Trim() + "' and ActiveStatus='Active'";
+            cmd.CommandText = @"select * from  [dbo].[Users] where   Email= '" + txtEmail.Text.Trim() + "' and password= '" + txtpassword.Text.Trim() + "' and ActiveStatus='Active'";
             con.Open();
 
-            string email = Convert.ToString(cmd.ExecuteScalar());
-
+            da = new SqlDataAdapter(cmd);
+            da.Fill(ds);
             con.Close();
 
-            if (string.IsNullOrEmpty(email))
+            if (ds.Tables.Count > 0)
             {
-                Response.Write("<script>alert('user not found or given account suspended.')</script>");
+                Session["UserEmail"] = ds.Tables[0].Rows[0]["Email"].ToString();
+                Session["Roles"] = ds.Tables[0].Rows[0]["Roles"].ToString();
+                Response.Redirect("Admin/Index.aspx");
             }
             else
             {
-                Session["UserEmail"] = txtEmail.Text.Trim();
-                Response.Redirect("Admin/Index.aspx");
+                Response.Write("<script>alert('user not found or given account suspended.')</script>");
             }
 
         }

@@ -8,6 +8,7 @@ namespace onlinenews.Admin
 {
     public partial class Users : System.Web.UI.Page
     {
+        public Boolean IsAdmin { get; set; }
         SqlConnection con;
         SqlCommand cmd = new SqlCommand();
         DataSet ds = new DataSet();
@@ -16,6 +17,10 @@ namespace onlinenews.Admin
         {
             if (!Page.IsPostBack)
             {
+                if (Convert.ToString(Session["Roles"]).ToLower().Equals("admin"))
+                {
+                    IsAdmin = true;
+                }
                 bindAllUsers();
             }
         }
@@ -24,8 +29,15 @@ namespace onlinenews.Admin
 
             con = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             cmd.Connection = con;
-            cmd.CommandText = @"SELECT  PersonID ,LastName ,FirstName ,MidName, (isnull(FirstName,'')+' '+isnull(MidName,'')+' '+isnull(LastName,'')) as Name  ,Address ,DateOfBirth ,MobileNo ,Email ,City ,Roles ,password ,ActiveStatus
-  FROM NewsDb.dbo.Users order by 1 desc";
+            if (Convert.ToString(Session["Roles"]).ToLower().Equals("admin"))
+            {
+                cmd.CommandText = @"SELECT  PersonID ,LastName ,FirstName ,MidName, (isnull(FirstName,'')+' '+isnull(MidName,'')+' '+isnull(LastName,'')) as Name  ,Address ,DateOfBirth ,MobileNo ,Email ,City ,Roles ,password ,ActiveStatus
+  FROM NewsDb.dbo.Users order by roles,1 desc";
+            }
+            else
+            {
+                cmd.CommandText = $"SELECT  PersonID ,LastName ,FirstName ,MidName, (isnull(FirstName,'')+' '+isnull(MidName,'')+' '+isnull(LastName,'')) as Name  ,Address ,DateOfBirth ,MobileNo ,Email ,City ,Roles ,password ,ActiveStatus FROM NewsDb.dbo.Users where lower(Roles)!='admin' and Email='{Convert.ToString(Session["UserEmail"])}' order by 1 desc";
+            }
             con.Open();
 
             da = new SqlDataAdapter(cmd);

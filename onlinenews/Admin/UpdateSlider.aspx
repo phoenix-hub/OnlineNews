@@ -1,9 +1,8 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMaster.Master" AutoEventWireup="true" CodeBehind="AddSlider.aspx.cs" Inherits="onlinenews.Admin.AddSlider" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admin/AdminMaster.Master" AutoEventWireup="true" CodeBehind="UpdateSlider.aspx.cs" Inherits="onlinenews.Admin.UpdateSlider" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
     <div class="row">
         <div class="col-12">
             <div class="card">
@@ -65,6 +64,9 @@
                                 <label class="col-sm-3 col-form-label">News Banner</label>
                                 <div class="col-sm-9">
                                     <asp:FileUpload ID="flNewsBanner" runat="server" class="form-control" />
+                                    <br />
+                                    <asp:HyperLink ID="lnkBanner" runat="server" Target="_blank" NavigateUrl="" style="color:red; font-size:13px;">Click here to see banner</asp:HyperLink>
+                                    <asp:Label ID="lblBanerImage" runat="server" Visible="false" Text="" ></asp:Label>
 
                                 </div>
                             </div>
@@ -145,7 +147,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <asp:Button ID="btnSave" runat="server" Text="Add Slider" OnClick="btnSubmit_Click" class="btn btn-gradient-info btn-fw" />
+                        <asp:Button ID="btnSave" runat="server" Text="Update Slider" OnClick="btnSubmit_Click" class="btn btn-gradient-info btn-fw" />
                         &nbsp;
                             <a href="Index.aspx" class="btn btn-gradient-light btn-fw">Cancel</a>
                     </div>

@@ -48,7 +48,10 @@
                                     <asp:Label ID="lblActiveStatus" runat="server" Text='<%# Eval("ActiveStatus") %>'></asp:Label>
                                 </td>
                                 <td>
-                                    <asp:Button ID="btnDeleteUser" CssClass="btn btn-gradient-danger btn-sm" OnClick="btnDeleteUser_Click" runat="server" Text="Delete" />
+                                       <%if (this.IsAdmin)
+                                    { %>
+                                    <asp:Button ID="btnDeleteUser" CssClass="btn btn-gradient-danger btn-sm" OnClick="btnDeleteUser_Click" runat="server" Text="Delete" /> 
+                                    <% } %>
                                     <asp:HyperLink CssClass="btn btn-gradient-success btn-sm" ID="lnkEdit" runat="server" NavigateUrl="#">Edit</asp:HyperLink>
                                 </td>
                             </tr>

@@ -7,13 +7,13 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Manage homepage slider</h4>
-                
-                        <div class="alert alert-success" id="sucessDiv" runat="server">
-                            <asp:Label ID="lblErrorGreen" runat="server" Text=""></asp:Label>
-                        </div>
-                        <div class="alert alert-danger" id="dangerDiv" runat="server">
-                            <asp:Label ID="lblErrorRed" runat="server" Text=""></asp:Label>
-                        </div>
+
+                <div class="alert alert-success" id="sucessDiv" runat="server">
+                    <asp:Label ID="lblErrorGreen" runat="server" Text=""></asp:Label>
+                </div>
+                <div class="alert alert-danger" id="dangerDiv" runat="server">
+                    <asp:Label ID="lblErrorRed" runat="server" Text=""></asp:Label>
+                </div>
 
                 <a href="AddSlider" class="btn btn-info btn-fw" style="float: right; margin-bottom: 10px;">Add New
                 </a>
@@ -66,7 +66,7 @@
                                 </td>
                                 <td>
                                     <asp:LinkButton ID="btnDeleteSlider" CssClass="btn btn-gradient-danger btn-sm" OnClick="btnDeleteSlider_Click" runat="server" Text="Delete" />
-                                    <asp:HyperLink CssClass="btn btn-gradient-success btn-sm" ID="lnkEdit" runat="server" NavigateUrl="#">Edit</asp:HyperLink>
+                                    <a class="btn btn-gradient-success btn-sm" href="UpdateSlider.aspx?id=<%# Eval("NewsId") %>">Edit</a>
                                 </td>
                             </tr>
                         </ItemTemplate>

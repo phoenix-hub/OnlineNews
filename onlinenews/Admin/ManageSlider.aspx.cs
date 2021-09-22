@@ -9,26 +9,41 @@ namespace onlinenews.Admin
 {
     public partial class ManageSlider : System.Web.UI.Page
     {
+        public Boolean IsAdmin { get; set; }
+
         SqlConnection con;
         SqlCommand cmd = new SqlCommand();
         DataSet ds = new DataSet();
         SqlDataAdapter da;
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Convert.ToString(Session["Roles"]).ToLower().Equals("admin"))
+            {
+                IsAdmin = true;
+            }
             if (!Page.IsPostBack)
             {
                 dangerDiv.Visible = false;
                 sucessDiv.Visible = false;
-                bindAllUsers();
+                bindAllSliders();
             }
 
         }
-        protected void bindAllUsers()
+        protected void bindAllSliders()
         {
 
             con = new SqlConnection(ConfigurationManager.ConnectionStrings["constr"].ConnectionString);
             cmd.Connection = con;
-            cmd.CommandText = "select NewsId, NewsTitle 'NewsTitle' , left(Description,17)+'...' 'NewsDescription' , '../'+NewsBanner 'NewsBanner' , NewsDistrict+','+NewsCity+','+NewsState as 'NewsLocation', IsActive 'IsActive'  ,left(CreatedBy,10)+'...' 'CreatedBy' ,CreatedDateTime 'CreatedOn' from [dbo].[tbl_NewsSlider] where IsActive='Active' order by NewsDateTime, CreatedDateTime desc";
+            if (Convert.ToString(Session["Roles"]).ToLower().Equals("admin"))
+            {
+                cmd.CommandText = "select NewsId,  left(NewsTitle,10)+'...' 'NewsTitle' , left(Description,10)+'...' 'NewsDescription' , '../'+NewsBanner 'NewsBanner' , NewsCity+','+NewsState as 'NewsLocation', IsActive 'IsActive'  ,left(CreatedBy,10)+'...' 'CreatedBy' ,CreatedDateTime 'CreatedOn' from [dbo].[tbl_NewsSlider]  order by IsActive, NewsDateTime, CreatedDateTime desc";
+            }
+            else
+            {
+
+                cmd.CommandText = $"select NewsId,  left(NewsTitle,10)+'...' 'NewsTitle' , left(Description,10)+'...' 'NewsDescription' , '../'+NewsBanner 'NewsBanner' , NewsCity+','+NewsState as 'NewsLocation', IsActive 'IsActive'  ,left(CreatedBy,10)+'...' 'CreatedBy' ,CreatedDateTime 'CreatedOn' from [dbo].[tbl_NewsSlider] where  CreatedBy='{Convert.ToString(Session["UserEmail"])}'  order by IsActive, NewsDateTime, CreatedDateTime desc";
+            }
+
             con.Open();
 
             da = new SqlDataAdapter(cmd);
@@ -66,7 +81,7 @@ namespace onlinenews.Admin
                     lblErrorGreen.Text = $"Success: Row deleted.";
                     sucessDiv.Visible = true;
                     dangerDiv.Visible = false;
-                    bindAllUsers();
+                    bindAllSliders();
 
                 }
             }

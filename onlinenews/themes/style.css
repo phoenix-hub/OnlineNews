@@ -102,10 +102,11 @@ img {
 	}
 		#header h1 a {
 			display: block;
-			width: 373px; height: 41px;
+			width: 373px;
+			height: 41px;
 			text-indent: -9999px;
 			outline: none;
-			background: url(/themes/images/logo.gif) no-repeat 0 0;
+			background: url(/themes/images/logo.png) no-repeat 0 0;
 		}
 	#header .ad {
 		float: right;

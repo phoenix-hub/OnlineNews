@@ -14,7 +14,7 @@
     <!-- add to the <body> of your page -->
     <div class="featured">
         <h2 class="title">Featured News</h2>
-        <div class="buffer"> 
+        <div class="buffer">
             <div id="wowslider-container1">
 
                 <div class="ws_images">
@@ -61,47 +61,43 @@
     <div class="articles">
         <h2 class="title">More Articles</h2>
         <!-- begin post -->
-        <div class="post">
-            <div class="details">
-                <p class="l"><span class="category"><a href="#">Advertising</a></span> - Posted by <a href="#">Chiq Montes</a> on April 20, 2009 </p>
-                <p class="r"><a href="#">21 Comments</a> </p>
-            </div>
-            <div class="thumb">
-                <a href="#">
-                    <img src="themes/images/_thumb1.jpg" alt="" /></a>
-            </div>
-            <h2><a href="#">Lorem Ipsum Dolor Sit Amet Libera Sequitor</a></h2>
-            <p>Sed auctor, purus et elementum gravida, felis augue faucibus velit, nec aliquet leo tellus eget purus. Sed est metus, placerat at, commodo ut, ultrices cursus, mauris. Cum sociis natoque penatibus</p>
-        </div>
+
+
+        <asp:Repeater ID="repeaterMoreNews" runat="server">
+            <HeaderTemplate>
+            </HeaderTemplate>
+            <ItemTemplate>
+                <div class="post">
+                    <div class="details">
+                        <p class="l">
+                            <span class="category"><a href="#">
+                                <%# Eval("NewsCategory") %>
+                            </a></span>- Posted by  
+                <%# Eval("NewsPostedBy") %>
+                        </p>
+                        <p class="r">
+                            <%# Eval("NewsPostedDate") %>
+                        </p>
+                    </div>
+
+                    <div class="thumb">
+                        <a href="#">
+                            <img src='<%# Eval("NewsPoster") %>' alt="" />
+                        </a>
+                       
+                    </div>
+                    <h2><a href="#">
+                        <%# Eval("morenewstitle") %></a></h2>
+                    <p>
+                        <%# Eval("NewsDescriptions") %>
+                </div>
+            </ItemTemplate>
+            <FooterTemplate>
+            </FooterTemplate>
+        </asp:Repeater>
+
         <!-- end post -->
-        <!-- begin post -->
-        <div class="post">
-            <div class="details">
-                <p class="l"><span class="category"><a href="#">Advertising</a></span> - Posted by <a href="#">Chiq Montes</a> on April 20, 2009 </p>
-                <p class="r"><a href="#">21 Comments</a> </p>
-            </div>
-            <div class="thumb">
-                <a href="#">
-                    <img src="themes/images/_thumb2.jpg" alt="" /></a>
-            </div>
-            <h2><a href="#">Lorem Ipsum Dolor Sit Amet Libera Sequitor</a></h2>
-            <p>Sed auctor, purus et elementum gravida, felis augue faucibus velit, nec aliquet leo tellus eget purus. Sed est metus, placerat at, commodo ut, ultrices cursus, mauris. Cum sociis natoque penatibus</p>
-        </div>
-        <!-- end post -->
-        <!-- begin post -->
-        <div class="post">
-            <div class="details">
-                <p class="l"><span class="category"><a href="#">Advertising</a></span> - Posted by <a href="#">Chiq Montes</a> on April 20, 2009 </p>
-                <p class="r"><a href="#">21 Comments</a> </p>
-            </div>
-            <div class="thumb">
-                <a href="#">
-                    <img src="themes/images/_thumb3.jpg" alt="" /></a>
-            </div>
-            <h2><a href="#">Lorem Ipsum Dolor Sit Amet Libera Sequitor</a></h2>
-            <p>Sed auctor, purus et elementum gravida, felis augue faucibus velit, nec aliquet leo tellus eget purus. Sed est metus, placerat at, commodo ut, ultrices cursus, mauris. Cum sociis natoque penatibus</p>
-        </div>
-        <!-- end post -->
+     
         <div class="break"></div>
     </div>
     <!-- begin post navigation -->
