@@ -34,6 +34,7 @@
                                 </td>
                                 <td>
                                     <asp:Label ID="lblName" runat="server" Text='<%# Eval("Name") %>'></asp:Label>
+                                    <asp:HiddenField ID="hdnPersonID" runat="server" Value='<%# Eval("PersonID") %>' />
                                 </td>
                                 <td>
                                     <asp:Label ID="lblDateOfBirth" runat="server" Text='<%# Eval("DateOfBirth") %>'></asp:Label>

@@ -12,7 +12,6 @@
     <link href="themes/style.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
     </asp:ContentPlaceHolder>
-
 </head>
 <body>
     <form runat="server">
@@ -55,13 +54,19 @@
             <!-- BEGIN content -->
             <div id="content">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server">
-
-
                 </asp:ContentPlaceHolder>
             </div>
             <!-- END content -->
             <!-- BEGIN sidebar -->
             <div id="sidebar">
+                <!-- begin featured video -->
+                <div class="box">
+                    <h2>Featured Video</h2>
+
+                    <iframe id="urIframe" runat="server" style="width: 100%; height: 100%" ></iframe>
+
+                </div>
+                <!-- end featured video -->
                 <!-- begin sponsors -->
                 <div class="box">
                     <h2>Sponsors</h2>
@@ -90,14 +95,7 @@
                     </ul>
                 </div>
                 <!-- end popular posts -->
-                <!-- begin featured video -->
-                <div class="box">
-                    <h2>Featured Video</h2>
-                    <div class="video">
-                        <img src="themes/images/_video.jpg" alt="" />
-                    </div>
-                </div>
-                <!-- end featured video -->
+
                 <!-- begin flickr photos -->
                 <div class="box">
                     <h2>Flickr Photos</h2>

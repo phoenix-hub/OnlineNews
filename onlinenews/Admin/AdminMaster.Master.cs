@@ -20,13 +20,13 @@ namespace onlinenews.Admin
         SqlDataAdapter da;
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Convert.ToString(Session["Roles"]).ToLower().Equals("admin"))
-            {
-                IsAdmin = true;
-            }
             if (!IsPostBack)
             {
-                
+                if (Convert.ToString(Session["Roles"]).ToLower().Equals("admin"))
+                {
+                    IsAdmin = true;
+                }
+
                 if (Session["UserEmail"] == null)
                     Response.Redirect("../login.aspx");
                 else
@@ -51,9 +51,9 @@ namespace onlinenews.Admin
             con.Close();
 
             if (ds.Tables[0].Rows.Count > 0)
-            { 
+            {
                 lblUserleftprofile.Text = ds.Tables[0].Rows[0]["FirstName"].ToString();
-                lblUserRole.Text = ds.Tables[0].Rows[0]["Roles"].ToString(); 
+                lblUserRole.Text = ds.Tables[0].Rows[0]["Roles"].ToString();
                 lblUserName.Text = $"Welcome : { ds.Tables[0].Rows[0]["FirstName"].ToString()} { ds.Tables[0].Rows[0]["LastName"].ToString()}";
             }
         }

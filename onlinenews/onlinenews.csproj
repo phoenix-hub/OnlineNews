@@ -174,6 +174,7 @@
     <Content Include="Admin\assets\vendors\js\vendor.bundle.base.js" />
     <Content Include="Admin\assets\vendors\mdi\css\materialdesignicons.min.css" />
     <Content Include="Admin\index.html" />
+    <Content Include="Admin\manage-video.aspx" />
     <Content Include="Admin\ManageMoreNews.aspx" />
     <Content Include="Admin\ManageSlider.aspx" />
     <Content Include="Admin\pages\charts\chartjs.html" />
@@ -300,6 +301,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="SliderNewsExpose.aspx" />
     <Content Include="themes\about.html" />
     <Content Include="themes\contact.html" />
     <Content Include="themes\ie.css" />
@@ -348,10 +350,8 @@
     <Content Include="themes\news slider\wowslider.html" />
     <Content Include="themes\page.html" />
     <Content Include="themes\style.css" />
-    <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
-    <Content Include="Site.Mobile.Master" />
     <Content Include="themes\news slider\engine1\ws-ctrl-convex.eot" />
     <Content Include="themes\news slider\engine1\ws-ctrl-convex.ttf" />
     <Content Include="themes\news slider\engine1\ws-ctrl-convex.woff" />
@@ -384,6 +384,13 @@
     </Compile>
     <Compile Include="Admin\logout.aspx.designer.cs">
       <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\manage-video.aspx.cs">
+      <DependentUpon>manage-video.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\manage-video.aspx.designer.cs">
+      <DependentUpon>manage-video.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\ManageMoreNews.aspx.cs">
       <DependentUpon>ManageMoreNews.aspx</DependentUpon>
@@ -447,19 +454,12 @@
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
-    <Compile Include="Site.Mobile.Master.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    <Compile Include="SliderNewsExpose.aspx.cs">
+      <DependentUpon>SliderNewsExpose.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Site.Mobile.Master.designer.cs">
-      <DependentUpon>Site.Mobile.Master</DependentUpon>
-    </Compile>
-    <Compile Include="ViewSwitcher.ascx.cs">
-      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ViewSwitcher.ascx.designer.cs">
-      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    <Compile Include="SliderNewsExpose.aspx.designer.cs">
+      <DependentUpon>SliderNewsExpose.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

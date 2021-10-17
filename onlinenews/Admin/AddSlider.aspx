@@ -3,8 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
     <div class="row">
+
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
@@ -38,11 +39,18 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="exampleTextarea1">Description</label>
-                            <asp:TextBox ID="txtDescription" runat="server" class="form-control" placeholder="Description" TextMode="MultiLine"></asp:TextBox>
                         </div>
                     </div>
-
+                    <div class="row">
+                        <div class="form-group">
+                            <div class="col-md-2">
+                                <label for="exampleTextarea1">Description</label></div>
+                            <div class="col-md-10">
+                                <asp:TextBox ID="txtDescription" runat="server" class="form-control" placeholder="Description" Style="width: 800px; height: 400px; margin: 10px 0 10px 0;"></asp:TextBox>
+                                <ajax:HtmlEditorExtender ID="htmlExtender_Description" runat="server" BehaviorID="htmlExtender_Description" TargetControlID="txtDescription" EnableSanitization="false"></ajax:HtmlEditorExtender>
+                            </div>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group row">
@@ -143,6 +151,8 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
                     </div>
                     <div class="row">
                         <asp:Button ID="btnSave" runat="server" Text="Add Slider" OnClick="btnSubmit_Click" class="btn btn-gradient-info btn-fw" />
