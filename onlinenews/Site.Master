@@ -22,10 +22,9 @@
             <!-- BEGIN header -->
             <div id="header">
                 <ul class="pages">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About us</a></li>
-                    <li><a href="page.html">Demo Page</a></li>
-                    <li><a href="contact.html">Contact Page</a></li>
+                    <li><a href="Default">Home</a></li>
+                    <li><a href="#">About us</a></li> 
+                    <li><a href="#">Contact Page</a></li>
                     <li><a href="login">Login</a></li>
                     <li><a href="register">New User</a></li>
                 </ul>

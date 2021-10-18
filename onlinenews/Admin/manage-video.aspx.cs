@@ -14,8 +14,6 @@ namespace onlinenews.Admin
         public Boolean IsAdmin { get; set; }
         SqlConnection con;
         SqlCommand cmd;
-        DataSet ds = new DataSet();
-        SqlDataAdapter da;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)

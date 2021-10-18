@@ -94,6 +94,7 @@ namespace onlinenews.Admin
                 string query = @"INSERT INTO [dbo].[tbl_NewsSlider](NewsTitle
            , ImgTitle
            , Description
+           , ShortDescription
            , NewsDateTime
            , NewsBanner
            , NewsCategory
@@ -108,6 +109,7 @@ namespace onlinenews.Admin
            (@NewsTitle
            , @ImgTitle
            , @Description
+           , @ShortDescription
            , @NewsDateTime
            , @NewsBanner
            , @NewsCategory
@@ -126,6 +128,7 @@ namespace onlinenews.Admin
                     {
                         cmd.Parameters.AddWithValue("@NewsTitle", txtNewsTitle.Text.Trim());
                         cmd.Parameters.AddWithValue("@ImgTitle", txtImgTitle.Text.Trim());
+                        cmd.Parameters.AddWithValue("@ShortDescription", txtShortDescription.Text.Trim());
                         cmd.Parameters.AddWithValue("@Description", txtDescription.Text.Trim());
                         cmd.Parameters.AddWithValue("@NewsDateTime", txtNewsDateTime.Text.Trim());
                         cmd.Parameters.AddWithValue("@NewsBanner", filename);

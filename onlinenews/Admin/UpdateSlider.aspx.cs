@@ -88,6 +88,7 @@ namespace onlinenews.Admin
             {
                 txtNewsTitle.Text = Convert.ToString(ds.Tables[0].Rows[0]["NewsTitle"]);
                 txtImgTitle.Text = Convert.ToString(ds.Tables[0].Rows[0]["ImgTitle"]);
+                txtShortDescription.Text = Convert.ToString(ds.Tables[0].Rows[0]["ShortDescription"]);
                 txtDescription.Text = Convert.ToString(ds.Tables[0].Rows[0]["Description"]);
                 txtNewsDateTime.Text = Convert.ToString(ds.Tables[0].Rows[0]["NewsDateTime"]);
                 txtNewsCountry.Text = Convert.ToString(ds.Tables[0].Rows[0]["NewsCountry"]);
@@ -139,6 +140,7 @@ namespace onlinenews.Admin
                 string query = @"UPDATE [dbo].[tbl_NewsSlider]
                                        SET [NewsTitle] = @NewsTitle,				 
                                           [ImgTitle] = @ImgTitle,					 
+                                          [ShortDescription] = @ShortDescription,					 
                                           [Description] = @Description,			 
                                           [NewsDateTime] = @NewsDateTime,			 
                                           [NewsBanner] = @NewsBanner,				 
@@ -161,6 +163,7 @@ namespace onlinenews.Admin
                         cmd.Parameters.AddWithValue("@NewsId", sliderId.Trim());
                         cmd.Parameters.AddWithValue("@NewsTitle", txtNewsTitle.Text.Trim());
                         cmd.Parameters.AddWithValue("@ImgTitle", txtImgTitle.Text.Trim());
+                        cmd.Parameters.AddWithValue("@ShortDescription", txtShortDescription.Text.Trim());
                         cmd.Parameters.AddWithValue("@Description", txtDescription.Text.Trim());
                         cmd.Parameters.AddWithValue("@NewsDateTime", txtNewsDateTime.Text.Trim());
                         if (!string.IsNullOrEmpty(filename))

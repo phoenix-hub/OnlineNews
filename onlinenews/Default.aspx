@@ -23,7 +23,7 @@
                             <HeaderTemplate>
                             </HeaderTemplate>
                             <ItemTemplate>
-                                <li><a href="<%# Eval("NewsId") %>">
+                                <li><a href="NewsExpose.aspx?NewsId=<%# Eval("NewsId") %>">
                                     <asp:Image runat="server" ImageUrl='<%# Eval("NewsBanner") %>' alt="slider html" title='<%# Eval("NewsTitle") %>' ID="wows1_1" /></a></li>
                             </ItemTemplate>
                             <FooterTemplate>
@@ -84,7 +84,7 @@
                         <a href="#">
                             <img src='<%# Eval("NewsPoster") %>' alt="" />
                         </a>
-                       
+
                     </div>
                     <h2><a href="#">
                         <%# Eval("morenewstitle") %></a></h2>
@@ -97,7 +97,7 @@
         </asp:Repeater>
 
         <!-- end post -->
-     
+
         <div class="break"></div>
     </div>
     <!-- begin post navigation -->

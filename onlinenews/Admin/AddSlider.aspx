@@ -42,15 +42,25 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group">
-                            <div class="col-md-2">
-                                <label for="exampleTextarea1">Description</label></div>
-                            <div class="col-md-10">
-                                <asp:TextBox ID="txtDescription" runat="server" class="form-control" placeholder="Description" Style="width: 800px; height: 400px; margin: 10px 0 10px 0;"></asp:TextBox>
-                                <ajax:HtmlEditorExtender ID="htmlExtender_Description" runat="server" BehaviorID="htmlExtender_Description" TargetControlID="txtDescription" EnableSanitization="false"></ajax:HtmlEditorExtender>
-                            </div>
+                        <div class="col-md-2">
+                            <label for="exampleTextarea1">Short Description</label>
+                        </div>
+                        <div class="col-md-10">
+                            <asp:TextBox ID="txtShortDescription" TextMode="MultiLine" MaxLength="100" runat="server" class="form-control" placeholder="Short Description"></asp:TextBox>
                         </div>
                     </div>
+                    <br />
+                    <br />
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label for="exampleTextarea1">Description</label>
+                        </div>
+                        <div class="col-md-10">
+                            <asp:TextBox ID="txtDescription" runat="server" TextMode="MultiLine" style="height: 200px;" class="form-control" placeholder="Description"></asp:TextBox>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group row">
